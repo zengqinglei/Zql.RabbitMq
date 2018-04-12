@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net451;net461;netstandard2.0</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Version>1.0.0</Version>
+    <Authors>zengql</Authors>
+    <Product>rabbitmq .net sdk</Product>
+    <Copyright>Copyright © 2018</Copyright>
+    <RepositoryUrl>https://github.com/zengqinglei/Zql.RabbitMq.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>asp.net;asp.net core;rabbitmq</PackageTags>
+    <releaseNotes>
+      for full changelog, check https://github.com/zengqinglei/Zql.RabbitMq/master/readme.md#change-log
+    </releaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="RabbitClient.*.cs">
+      <DependentUpon>RabbitClient.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="RabbitMQ.Client" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'net451'">
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection">
+      <Version>2.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>
