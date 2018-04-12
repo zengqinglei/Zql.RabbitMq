@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Zac.RabbitMq.Sdk.Configurator
+﻿namespace Zac.RabbitMq.Sdk.Configurator
 {
     /// <summary>
     /// 订阅消息配置
